@@ -1,0 +1,39 @@
+{
+  "name": "example-aura-dapp",
+  "version": "1.0.0",
+  "description": "Example showing the dapp of aura network.",
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "private": false,
+  "type": "module",
+  "keywords": [
+    "aura network",
+    "example",
+    "blockchain"
+  ],
+  "author": {
+    "name": "ThienLK",
+    "email": "thienlk0901@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aura-nw/dapp-example.git"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "start-gendoc": "node swagger.js"
+  },
+  "dependencies": {
+    "@auranw/aurajs": "^1.0.0-alpha2",
+    "@cosmjs/proto-signing": "^0.27.0",
+    "body-parser": "^1.19.1",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "swagger-autogen": "^2.18.8",
+    "swagger-ui-express": "^4.1.4",
+    "tslib": "^2.3.1",
+    "web3.storage": "^3.5.3"
+  }
+}

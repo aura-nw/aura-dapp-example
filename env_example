@@ -1,0 +1,5 @@
+MNEMONIC='xxxxxxx'
+RPC='http://xxxx:xxx'
+CONTRACT='contract address'
+
+WEB3_STORAGE_TOKEN='xxxxxx'
