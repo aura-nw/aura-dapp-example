@@ -1,5 +1,5 @@
 import SwaggerAutogen from 'swagger-autogen';
-const swaggerAutogen = new SwaggerAutogen({openapi: '3.0.0'});
+const swaggerAutogen = new SwaggerAutogen();
 
 const doc = {
     info: {
@@ -10,7 +10,7 @@ const doc = {
     host: "localhost:3000",
     basePath: "/",
     schemes: ['http', 'https'],
-    consumes: ['multipart/form-data'],
+    consumes: ['application/json'],
     produces: ['application/json'],
     tags: [
         {

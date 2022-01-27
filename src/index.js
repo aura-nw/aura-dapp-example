@@ -18,18 +18,17 @@ const swaggerFile = JSON.parse(
 
 import express from 'express';
 const app = express();
+
 import bodyParser from 'body-parser';
-import fileUpload from 'express-fileupload';
 app.use(bodyParser.json());
-app.use(fileUpload());
 
 /* Routes */
 import router from './routes.js';
 
 /* Middlewares */
 app.use(router);
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.listen(3000, () => {
-  console.log("Server is running!\nAPI documentation: http://localhost:3000/docs")
+  console.log("Server is running!\nAPI documentation: http://localhost:3000/docs");
 })
