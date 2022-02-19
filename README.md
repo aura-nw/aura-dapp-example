@@ -23,9 +23,9 @@ In this tutorial you will learn how to build a AuraJS based dApp. The example dA
 ## Deploy cw721 contract
 After the installation Aura Daemon we need to deploy cw721 contract to system.  For easy testing, the aura testnet is live. You can use this to deploy and run your contracts.
 ### Setting Up Environment
-Aura Testnet RPC: http://18.138.28.51:26657
+Aura Testnet RPC: http://34.203.177.141:26657/
 ```sh
-export RPC="http://18.138.28.51:26657" 
+export RPC="http://34.203.177.141:26657/" 
 export CHAIN_ID=aura-testnet
 export NODE=(--node $RPC)
 export TXFLAG=(${NODE} --chain-id ${CHAIN_ID} --gas-prices 0.025uaura --gas auto --gas-adjustment 1.3)
@@ -71,7 +71,7 @@ RUSTFLAGS='-C link-arg=-s' cargo wasm
 #### Deploy contract
 ```sh
 # store contract
-RES=$(aurad tx wasm store  ../../target/wasm32-unknown-unknown/release/cw721_base.wasm --from wallet --node http://18.138.28.51:26657 --chain-id aura-testnet --gas-prices 0.025uaura --gas auto --gas-adjustment 1.3 -y --output json)
+RES=$(aurad tx wasm store  ../../target/wasm32-unknown-unknown/release/cw721_base.wasm --from wallet --node http://34.203.177.141:26657/ --chain-id aura-testnet --gas-prices 0.025uaura --gas auto --gas-adjustment 1.3 -y --output json)
 # get the code id
 CODE_ID=$(echo $RES | jq -r '.logs[0].events[-1].attributes[0].value')
 # instantiate contract
