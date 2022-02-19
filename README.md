@@ -47,7 +47,7 @@ It is the only way to recover your account if you ever forget your password.
 permit train lounge swap upon blush acid firm vintage earth ability salt youth collect frequent twice settle often salon allow fiber permit skull hotel
 ```
 You need to save the mnemonic for identification on the dapp later!  
-Ask for tokens from faucet http://faucet.testnet.aura.network:9000/?address=aura15j7k0s2lj8uv59c33u3nj0npxz9qecdelm4xlw
+Ask for tokens from faucet https://faucet-testnet.aura.network/?address={address}
 
 #### Go  
 You can set up golang following the [official documentation](https://github.com/golang/go/wiki#working-with-go). The latest versions of aurad require go version v1.17+.   
