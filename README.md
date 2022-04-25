@@ -59,6 +59,8 @@ After [install rustup tool](https://rustup.rs/) make sure you have the wasm32 ta
 rustup target list --installed
 rustup target add wasm32-unknown-unknown
 ```
+#### jq  
+In the cli there will be use of jq to slice and filter and map and transform structured data. Please download and install jq [here](https://stedolan.github.io/jq/).
 #### Get cw721 contract:
 ```sh
 # get the contract
@@ -71,14 +73,23 @@ RUSTFLAGS='-C link-arg=-s' cargo wasm
 #### Deploy contract
 ```sh
 # store contract
-RES=$(aurad tx wasm store  ../../target/wasm32-unknown-unknown/release/cw721_base.wasm --from wallet --node http://34.203.177.141:26657/ --chain-id aura-testnet --gas-prices 0.025uaura --gas auto --gas-adjustment 1.3 -y --output json)
+RES=$(aurad tx wasm store  ../../target/wasm32-unknown-unknown/release/cw721_base.wasm --from wallet $TXFLAG)
 # get the code id
 CODE_ID=$(echo $RES | jq -r '.logs[0].events[-1].attributes[0].value')
+```
+```sh
+# set variable
+INIT='{"minter":"{minter_address}","name":"Aura NFT","symbol":"ANFT"}'
+```
+
+In {minter_address} above is the address value of the minter obtained when creating the wallet, in that case value will be "aura15j7k0s2lj8uv59c33u3nj0npxz9qecdelm4xlw"
+
+```sh
 # instantiate contract
-INIT='{"minter":"aura15j7k0s2lj8uv59c33u3nj0npxz9qecdelm4xlw","name":"Aura NFT","symbol":"ANFT"}'
 aurad tx wasm instantiate $CODE_ID "$INIT" \
     --from wallet --label "cw721" $TXFLAG -y
 ```
+
 ## Web3 Storage
 
 This example will use ipfs to store the nft images. [Web3.Storage](https://web3.storage) is backed by the provable storage of [Filecoin](https://filecoin.io) and makes data accessible to your users over the public [IPFS](https://ipfs.io/) network.  
