@@ -82,7 +82,7 @@ CODE_ID=$(echo $RES | jq -r '.logs[0].events[-1].attributes[0].value')
 INIT='{"minter":"{minter_address}","name":"Aura NFT","symbol":"ANFT"}'
 ```
 
-In {minter_address} above is the address value of the minter obtained when creating the wallet, in that case value will be "aura15j7k0s2lj8uv59c33u3nj0npxz9qecdelm4xlw"
+In `{minter_address}` above is the address value of the minter obtained when creating the wallet, in that case value will be `"aura15j7k0s2lj8uv59c33u3nj0npxz9qecdelm4xlw"`
 
 ```sh
 # instantiate contract
