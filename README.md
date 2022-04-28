@@ -47,7 +47,7 @@ It is the only way to recover your account if you ever forget your password.
 permit train lounge swap upon blush acid firm vintage earth ability salt youth collect frequent twice settle often salon allow fiber permit skull hotel
 ```
 You need to save the mnemonic for identification on the dapp later!  
-Please follow the guide to ask for tokens at serenity-testnet discord channel [config](https://github.com/aura-nw/testnets/tree/main/serenity-testnet).
+Please follow the guide to ask for tokens at [serenity-testnet discord channel](https://github.com/aura-nw/testnets/tree/main/serenity-testnet).
 
 #### Go  
 You can set up golang following the [official documentation](https://github.com/golang/go/wiki#working-with-go). The latest versions of aurad require go version v1.17+.   
@@ -90,7 +90,7 @@ In `{minter_address}` above is the address value of the minter obtained when cre
 ```sh
 # instantiate contract
 aurad tx wasm instantiate $CODE_ID "$INIT" \
-    --from wallet --label "cw721" $TXFLAG -y
+    --from wallet --label "cw721" $TXFLAG -y --no-admin
 ```
 
 ## Web3 Storage
