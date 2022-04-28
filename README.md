@@ -23,6 +23,20 @@ In this tutorial you will learn how to build a AuraJS based dApp. The example dA
 ## Deploy cw721 contract
 After the installation Aura Daemon we need to deploy cw721 contract to system.  For easy testing, the aura testnet is live. You can use this to deploy and run your contracts.
 ### Setting Up Environment
+#### Go  
+You can set up golang following the [official documentation](https://github.com/golang/go/wiki#working-with-go). The latest versions of aurad require go version v1.17+.   
+#### Rust  
+The standard approach is to use rustup to maintain dependencies and handle updating multiple versions of cargo and rustc, which you will be using.  
+
+After [install rustup tool](https://rustup.rs/) make sure you have the wasm32 target:
+```
+rustup target list --installed
+rustup target add wasm32-unknown-unknown
+```
+#### jq  
+In the cli there will be use of jq to slice and filter and map and transform structured data. Please download and install jq [here](https://stedolan.github.io/jq/).
+
+#### Create wallet
 Aura Testnet RPC: https://rpc.serenity.aura.network:443
 ```sh
 export RPC="https://rpc.serenity.aura.network:443" 
@@ -46,21 +60,12 @@ It is the only way to recover your account if you ever forget your password.
 
 permit train lounge swap upon blush acid firm vintage earth ability salt youth collect frequent twice settle often salon allow fiber permit skull hotel
 ```
-You need to save the mnemonic for identification on the dapp later!  
+You need to save the mnemonic for identification on the dapp later! 
+
+#### Ask for token
+To deploy and execute contract, you need to have some AURA token on tesnet.  
 Please follow the guide to ask for tokens at [serenity-testnet discord channel](https://github.com/aura-nw/testnets/tree/main/serenity-testnet).
 
-#### Go  
-You can set up golang following the [official documentation](https://github.com/golang/go/wiki#working-with-go). The latest versions of aurad require go version v1.17+.   
-#### Rust  
-The standard approach is to use rustup to maintain dependencies and handle updating multiple versions of cargo and rustc, which you will be using.  
-
-After [install rustup tool](https://rustup.rs/) make sure you have the wasm32 target:
-```
-rustup target list --installed
-rustup target add wasm32-unknown-unknown
-```
-#### jq  
-In the cli there will be use of jq to slice and filter and map and transform structured data. Please download and install jq [here](https://stedolan.github.io/jq/).
 #### Get cw721 contract:
 ```sh
 # get the contract
